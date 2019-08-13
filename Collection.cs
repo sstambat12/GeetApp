@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GeetApp
 {
-    class Collection
+    public class Collection
     {
-        Dictionary<string, Album> AlbumsDictionary;
+        //Dictionary<string, Album> AlbumsDictionary;
 
         public void Add(Song song)
         {

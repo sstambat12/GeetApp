@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeetApp
 {
-    class Album
+    public class Album
     {
         public string AlbumName { get; set; }
         public List<Song> Songs { get; set; }

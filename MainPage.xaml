@@ -8,7 +8,26 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-
-    </Grid>
+    <StackPanel Orientation="Vertical" Margin="2">
+        <StackPanel Orientation="Horizontal" Margin="2">
+            <Button Name="AddSong" Click="AddSong_Click" Content="Add Song" Margin="10"/>
+        </StackPanel>
+        <Grid Name="SongsGrid">
+        <GridView Name="listOfSongs" ItemsSource="{Binding}" Height="300" Width="1000">
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="local:Song">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{x:Bind Title}" Width="200"/>
+                        <TextBlock Text="{x:Bind AlbumName}" Width="200"/>
+                        <TextBlock Text="{x:Bind Artist}" Width="200"/>
+                        <TextBlock Text="{x:Bind Duration}" Width="200"/>
+                            <Button Content="Delete" Click="DeleteSong_Click" Tag="{x:Bind Title}"/>
+                        </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            
+        </GridView>
+        </Grid>
+    </StackPanel>
+    
 </Page>
