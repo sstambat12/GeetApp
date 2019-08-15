@@ -20,7 +20,7 @@
                         <TextBlock x:ConnectionId='5'                       Width="200"/>
                         <TextBlock x:ConnectionId='6'                           Width="200"/>
                         <TextBlock x:ConnectionId='7'                        Width="200"/>
-                        <TextBlock x:ConnectionId='8'                          Width="200"/>
+                        <TextBlock x:ConnectionId='8'                             Width="200"/>
                             <Button x:ConnectionId='9' Content="Delete"                                              />
                         </StackPanel>
                 </DataTemplate>

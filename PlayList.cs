@@ -11,12 +11,12 @@ namespace GeetApp
         private const string TEXT_FILE = "Playlist.txt";
         public List<Song> songs;
 
-        public void WriteToFile()
+        public async void WriteToFileAsync()
         {
             foreach (var s in songs)
             {
                 var content = s.Title + "," + s.Artist + "," + s.AlbumName + "," + s.Duration;
-                FileHelper.WriteTextFileAsync(TEXT_FILE, content);
+                await FileHelper.WriteTextFileAsync(TEXT_FILE, content);
             }
         }
 
@@ -24,7 +24,7 @@ namespace GeetApp
         {
             var songs = new List<Song>();
             string content = await FileHelper.ReadTextFileAsync(TEXT_FILE);
-            var lines = content.Split('\r', '\n');
+            var lines = content.Split('\r','\n');
             foreach(var line in lines)
             {
                 if (string.IsNullOrEmpty(line))

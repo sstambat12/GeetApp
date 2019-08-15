@@ -10,7 +10,8 @@ namespace GeetApp
 {
     class FileHelper
     {
-        public async static void WriteTextFileAsync(string fileName, string content)
+        public async static         Task
+WriteTextFileAsync(string fileName, string content)
         {
             var storageFolder = ApplicationData.Current.LocalFolder;
             var textFile = await storageFolder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists);

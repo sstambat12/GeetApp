@@ -71,18 +71,32 @@ namespace GeetApp
                 listOfSongs.Add(song);
             }
             this.currentPlayList.songs.AddRange(listOfSongs);
+            this.DataContext = null;
             this.DataContext = currentPlayList.songs;
             
             PlayList p = new PlayList();
             p.songs = listOfSongs;
-            p.WriteToFile();
+            p.WriteToFileAsync();
         }
 
         private void DeleteSong_Click(object sender, RoutedEventArgs e)
         {
-            Button btn = sender as Button;
+            // currentPlayList.songs.Remove()
+            DependencyObject iterator = sender as DependencyObject;
 
-            int row = SongsGrid.Children.IndexOf(btn.Parent as StackPanel);
+            while(!(iterator is GridViewItem))
+            {
+                iterator = VisualTreeHelper.GetParent(iterator);
+
+            }
+            DependencyObject parent = VisualTreeHelper.GetParent(iterator);
+            Panel panel = parent as Panel;
+            int index = panel.Children.IndexOf(iterator as UIElement);
+            currentPlayList.songs.RemoveAt(index);
+            this.DataContext = null;
+            this.DataContext = currentPlayList.songs;
+
+            //currentPlayList.WriteToFileAsync();
             
         }
 
