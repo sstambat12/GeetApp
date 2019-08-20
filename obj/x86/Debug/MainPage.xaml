@@ -6,29 +6,109 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <StackPanel Orientation="Vertical" Margin="2">
-        <StackPanel Orientation="Horizontal" Margin="2">
-            <Button x:ConnectionId='10' Name="AddSong"                       Content="Add Song" Margin="10"/>
-        </StackPanel>
-        <Grid x:ConnectionId='2' Name="SongsGrid">
-        <GridView x:ConnectionId='3' Name="listOfSongs" ItemsSource="{Binding}" Height="300" Width="1000">
-            <GridView.ItemTemplate>
-                <DataTemplate                        >
-                    <StackPanel x:ConnectionId='4' Orientation="Horizontal">
-                        <TextBlock x:ConnectionId='5'                       Width="200"/>
-                        <TextBlock x:ConnectionId='6'                           Width="200"/>
-                        <TextBlock x:ConnectionId='7'                        Width="200"/>
-                        <TextBlock x:ConnectionId='8'                             Width="200"/>
-                            <Button x:ConnectionId='9' Content="Delete"                                              />
-                        </StackPanel>
-                </DataTemplate>
-            </GridView.ItemTemplate>
-            
-        </GridView>
-        </Grid>
-    </StackPanel>
     
+    <Grid>
+        <Grid VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="110"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <muxc:NavigationView x:ConnectionId='3' Grid.Column="0" x:Name="NavigationControlView" PaneDisplayMode="Left">
+            <muxc:NavigationView.MenuItems>
+                <muxc:NavigationViewItem x:ConnectionId='20' Content="My Music" Name="MyMusicMenu"/>
+                <muxc:NavigationViewItem x:ConnectionId='21' Content="Now Playing" Name="PlayListMenu"/>
+            </muxc:NavigationView.MenuItems>
+        </muxc:NavigationView>
+                <Pivot x:ConnectionId='4' Grid.Column="1" Height="Auto" Title="My Music"                                          >
+                <Pivot.Items>
+                    <PivotItem Header="Songs">
+                    <Grid Margin="2" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+
+                            <StackPanel Orientation="Horizontal" Margin="2" Background="LightGray">
+                            <Button x:ConnectionId='17' Name="AddSong"                       Content="Add Song" Margin="10"/>
+                            <Button x:ConnectionId='18' Name="SelectPhoto"                                Content="Select Photo"/>
+                            <Image x:ConnectionId='19' Name="Cover"                                 Stretch="Uniform" Height="100" Width="100"/>
+                        </StackPanel>
+                          <Grid x:ConnectionId='8' Grid.Row="1" Name="SongsGrid" HorizontalAlignment="Stretch">
+                                <ListView x:ConnectionId='9' Name="listOfSongs" HorizontalAlignment="Stretch" ItemsSource="{Binding}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                          ScrollViewer.IsHorizontalRailEnabled="True" ScrollViewer.HorizontalScrollMode="Auto">
+                                        <ListView.HeaderTemplate>
+                                            <DataTemplate>
+                                                <Grid Padding="12" Background="{ThemeResource SystemBaseLowColor}" HorizontalAlignment="Stretch">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="450" />
+                                                        <ColumnDefinition Width="1*" MinWidth="250"/>
+                                                        <ColumnDefinition Width="1*" MinWidth="250"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock HorizontalAlignment="Left" Text="Title" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                                    <TextBlock HorizontalAlignment="Left" Grid.Column="1" Text="Album Name" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                                    <TextBlock HorizontalAlignment="Left" Grid.Column="2" Text="Artist" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                                    <TextBlock HorizontalAlignment="Left" Grid.Column="3" Text="Duration"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ListView.HeaderTemplate>
+                                  <ListView.ItemTemplate>
+                                    <DataTemplate x:Name="TableDataTemplate"                        >
+                                        <Grid x:ConnectionId='11' Height="Auto" Padding="12" Width="{Binding ElementName=listOfSongs, Path=ActualWidth}" MinWidth="1000" HorizontalAlignment="Left" Margin="-10,0,0,0">
+                                           <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="450"/>
+                                                        <ColumnDefinition Width="1*" MinWidth="250"/>
+                                               <ColumnDefinition Width="1*" MinWidth="250"/>
+                                               <ColumnDefinition Width="Auto"/>
+                                               <ColumnDefinition Width="Auto"/>
+                                           </Grid.ColumnDefinitions>
+                                                    <CheckBox x:ConnectionId='12' Width="450" HorizontalAlignment="Left" VerticalAlignment="Center"                          />
+                                                    
+                                                    <TextBlock x:ConnectionId='13' HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center"                           Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                                    <TextBlock x:ConnectionId='14' HorizontalAlignment="Left" Grid.Column="2" VerticalAlignment="Center"                        Style="{ThemeResource CaptionTextBlockStyle}" />
+                                                    <TextBlock x:ConnectionId='15' HorizontalAlignment="Center" Grid.Column="3" VerticalAlignment="Center"                            />
+                                                    <Button x:ConnectionId='16' Margin="5,0,0,0" Content="Play"  Grid.Column="4"                                              />
+                                                </Grid>
+                                    </DataTemplate>
+                                  </ListView.ItemTemplate>
+                                </ListView>
+                          </Grid>
+                    </Grid>
+                    </PivotItem>
+                    <PivotItem Header="Albums">
+                            <GridView x:ConnectionId='5' ItemsSource="{Binding}" Name="AlbumGrid">
+                                <GridView.ItemTemplate>
+                                    <DataTemplate x:Name="MusicGalleryDataTemplate"                         >
+                                        <StackPanel x:ConnectionId='6' Height="280" Width="180" Margin="12" BorderThickness="3" >
+                                            <Image Source="Assets/AlbumCover.png" Height="180" Width="180" Stretch="UniformToFill"/>
+                                            <StackPanel Margin="0,12">
+                                                <TextBlock x:ConnectionId='7'                           Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </GridView.ItemTemplate>
+                                <GridView.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <ItemsWrapGrid MaximumRowsOrColumns="3" Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </GridView.ItemsPanel>
+                            </GridView>
+                        </PivotItem>
+                </Pivot.Items>
+            </Pivot>
+        </Grid>
+        </Grid>
+        <MediaElement x:ConnectionId='2'                                       IsFullWindow="False" Grid.Row="1" Height="110" VerticalAlignment="Bottom" x:Name="MediaPlayer" AreTransportControlsEnabled="True" HorizontalAlignment="Stretch">
+            </MediaElement>
+
+    </Grid>
 </Page>
 

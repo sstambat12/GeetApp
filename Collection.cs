@@ -8,16 +8,38 @@ namespace GeetApp
 {
     public class Collection
     {
-        //Dictionary<string, Album> AlbumsDictionary;
+        Dictionary<string, Album> AlbumsDictionary = new Dictionary<string, Album>();
 
         public void Add(Song song)
         {
-
+            if(AlbumsDictionary.ContainsKey(song.AlbumName))
+            {
+                AlbumsDictionary[song.AlbumName].Add(song);
+            }
+            else
+            {
+                Album album = new Album();
+                album.AlbumName = song.AlbumName;
+                album.Add(song);
+                AlbumsDictionary.Add(song.AlbumName, album);
+                
+            }
         }
 
-        public void Add(Album album)
+        public List<Song> GetListofSongs()
         {
+            List<Song> songs = new List<Song>();
+            foreach(var album in AlbumsDictionary.Values)
+            {
+                songs.AddRange(album.Songs);
+                    
+            }
+            return songs;
+        }
 
+        public ICollection<Album> GetListofAlbums()
+        {
+            return AlbumsDictionary.Values;
         }
     }
 }

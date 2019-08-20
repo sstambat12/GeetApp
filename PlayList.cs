@@ -15,7 +15,7 @@ namespace GeetApp
         {
             foreach (var s in songs)
             {
-                var content = s.Title + "," + s.Artist + "," + s.AlbumName + "," + s.Duration;
+                var content = s.Title + "," + s.Artist + "," + s.AlbumName + "," + s.Duration+ ","+ s.Path;
                 await FileHelper.WriteTextFileAsync(TEXT_FILE, content);
             }
         }
@@ -36,7 +36,8 @@ namespace GeetApp
                     Title = lineParts[0],
                     Artist = lineParts[1],
                     AlbumName = lineParts[2],
-                    Duration = TimeSpan.Parse(lineParts[3])
+                    Duration = TimeSpan.Parse(lineParts[3]),
+                    Path = lineParts[4]
 
                 };
                 songs.Add(song);

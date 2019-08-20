@@ -13,7 +13,11 @@ namespace GeetApp
 
         public void Add(Song song)
         {
-
+            if(Songs == null)
+            {
+                Songs = new List<Song>();
+            }
+            Songs.Add(song);
         }
 
     }

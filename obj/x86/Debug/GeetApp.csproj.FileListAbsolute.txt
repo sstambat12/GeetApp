@@ -218,3 +218,6 @@ C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\obj\x86\Debug\qualifiers.
 C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636758804200000000.json
+C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\obj\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xaml
+C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\obj\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf
+C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf

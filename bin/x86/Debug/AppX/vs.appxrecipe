@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>2BD4ACF567254A3D3A385FDC6478BDE4699F822A3F1610BE9185F45253A54A93</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>9F78AE8A475295575AAA4EFE45958BDBA4162FD1F833CDC4C6F02DF58F3B8B1F</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>8014149f-715b-4d1b-a1dd-561ba08d9120_1.0.0.0_x86__apdxd72hpawqa</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>8014149f-715b-4d1b-a1dd-561ba08d9120_apdxd72hpawqa!App</RegisteredUserModeAppID>
     <RegisteredPackageID>8014149f-715b-4d1b-a1dd-561ba08d9120</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-08-13T19:35:22.815</Modified>
+      <Modified>2019-08-20T05:00:52.230</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\GeetApp.exe">
       <PackagePath>entrypoint\GeetApp.exe</PackagePath>
-      <Modified>2019-08-13T19:35:22.403</Modified>
+      <Modified>2019-08-20T05:00:50.562</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -498,9 +498,9 @@
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
       <Modified>2018-10-23T08:33:40.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2019-08-10T07:40:38.671</Modified>
+    <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\Assets\AlbumCover.png">
+      <PackagePath>Assets\AlbumCover.png</PackagePath>
+      <Modified>2019-08-20T04:59:02.731</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -509,7 +509,7 @@
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-06-18T05:29:43.653</Modified>
+      <Modified>2019-08-18T19:34:16.032</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
@@ -536,32 +536,93 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2019-06-18T05:29:43.653</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+      <Modified>2019-08-10T07:40:38.671</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\GeetApp.xr.xml">
       <PackagePath>GeetApp.xr.xml</PackagePath>
-      <Modified>2019-08-13T07:41:56.579</Modified>
+      <Modified>2019-08-20T05:00:50.314</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf">
+      <PackagePath>Microsoft.UI.Xaml\DensityStyles\Compact.xbf</PackagePath>
+      <Modified>2019-08-20T05:00:50.327</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-08-13T19:35:22.175</Modified>
+      <Modified>2019-08-20T05:00:50.327</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-08-13T19:35:22.175</Modified>
+      <Modified>2019-08-20T05:00:50.327</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17763.0\\redist\Debug\x86\ucrtbased.dll">
+      <PackagePath>ucrtbased.dll</PackagePath>
+      <Modified>2018-10-23T08:41:14.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2018-10-23T07:44:28.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sujat\.nuget\packages\microsoft.ui.xaml\2.1.190606001\build\..\lib\uap10.0\Microsoft.UI.Xaml.winmd">
+      <PackagePath>WinMetadata\Microsoft.UI.Xaml.winmd</PackagePath>
+      <Modified>2019-06-07T18:59:06.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-08-12T07:43:48.151</Modified>
+      <Modified>2019-08-20T05:00:51.625</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\Core\GeetApp.exe">
       <PackagePath>GeetApp.exe</PackagePath>
-      <Modified>2019-08-13T19:35:22.799</Modified>
+      <Modified>2019-08-20T05:00:52.216</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
+    <ResolvedSDKReference Include="C:\Users\sujat\.nuget\packages\microsoft.ui.xaml\2.1.190606001\build\..\tools\AppX\x86\Release\Microsoft.UI.Xaml.2.1.appx">
+      <Name>Microsoft.UI.Xaml.2.1</Name>
+      <Version>2.11906.6001.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.1, MinVersion = 2.11906.6001.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\sujat\.nuget\packages\microsoft.ui.xaml\2.1.190606001\build\..\tools\AppX\x86\Release\Microsoft.UI.Xaml.2.1.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.27323.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.27323.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.27323.0</Version>
+      <Architecture>ARM64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.27323.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM64\Microsoft.VCLibs.ARM64.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.27323.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.27323.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.27323.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.27323.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.14.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.NET.CoreRuntime\1.1\">
       <Name>Microsoft.NET.CoreRuntime.1.1</Name>
       <Version>1.1.27004.0</Version>

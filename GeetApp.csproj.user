@@ -3,5 +3,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
     <DebugEngines />
+    <UseSimulator>false</UseSimulator>
   </PropertyGroup>
 </Project>

@@ -15,6 +15,8 @@ namespace GeetApp
         public string DurationStr { get{
                 return String.Format("{0:D2}:{1:D2}",Duration.Minutes,Duration.Seconds);
             } }
+        public string Path { get; set; }
+
         //public Picture CoverImage { get; set; }
 
     }
