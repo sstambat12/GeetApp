@@ -8,22 +8,24 @@ namespace GeetApp
 {
     public class PlayList
     {
-        private const string TEXT_FILE = "Playlist.txt";
+       // private const string TEXT_FILE = "Playlist.txt";
         public List<Song> songs;
+        public string Name { get; set; }
+
 
         public async void WriteToFileAsync()
         {
             foreach (var s in songs)
             {
                 var content = s.Title + "," + s.Artist + "," + s.AlbumName + "," + s.Duration+ ","+ s.Path;
-                await FileHelper.WriteTextFileAsync(TEXT_FILE, content);
+                await FileHelper.WriteTextFileAsync(Name, content);
             }
         }
 
-        public async static Task<PlayList> GetPlayListFromFileAsync()
+        public async static Task<PlayList> GetPlayListFromFileAsync(string fileName)
         {
             var songs = new List<Song>();
-            string content = await FileHelper.ReadTextFileAsync(TEXT_FILE);
+            string content = await FileHelper.ReadTextFileAsync(fileName);
             var lines = content.Split('\r','\n');
             foreach(var line in lines)
             {
@@ -43,6 +45,7 @@ namespace GeetApp
                 songs.Add(song);
             }
             PlayList p = new PlayList();
+            p.Name = fileName;
             p.songs = songs;
             return p;
         }

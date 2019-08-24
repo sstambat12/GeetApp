@@ -415,8 +415,20 @@
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\AlbumPage.xbf">
+      <PackagePath>AlbumPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\CreatePlaylistDialog.xbf">
+      <PackagePath>CreatePlaylistDialog.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\PivotDisplay.xbf">
+      <PackagePath>PivotDisplay.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\PlaylistDisplay.xbf">
+      <PackagePath>PlaylistDisplay.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17763.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>

@@ -1,113 +1,48 @@
 ﻿<Page
-    x:Class="GeetApp.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:GeetApp"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    
-    <Grid>
-        <Grid VerticalAlignment="Stretch">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="110"/>
-            </Grid.RowDefinitions>
+	x:Class="GeetApp.MainPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="using:GeetApp"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+	Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+	
+	<Grid>
+		<Grid VerticalAlignment="Stretch">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="110"/>
+			</Grid.RowDefinitions>
 
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
-                <muxc:NavigationView Grid.Column="0" x:Name="NavigationControlView" PaneDisplayMode="Left">
-            <muxc:NavigationView.MenuItems>
-                <muxc:NavigationViewItem Content="My Music" Name="MyMusicMenu"/>
-                <muxc:NavigationViewItem Content="Now Playing" Name="PlayListMenu"/>
+			<Grid Grid.Row="0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="200"/>
+					<ColumnDefinition Width="1*"/>
+                    
+				</Grid.ColumnDefinitions>
+				<muxc:NavigationView IsBackEnabled="{Binding ElementName=CentreFrame, Path=CanGoBack}" Grid.Column="0" x:Name="NavigationControlView" PaneDisplayMode="Left" BackRequested="NavigationControlView_BackRequested">
+			<muxc:NavigationView.MenuItems>
+				<muxc:NavigationViewItem Content="My Music" Name="MyMusicMenu" Tapped="MyMusicMenu_Tapped"/>
+				<muxc:NavigationViewItem Content="Now Playing" Name="PlayListMenu"/>
+                <muxc:NavigationViewItem Content="Playlists" Name="PlaylistDisplay"/>
+
+
+
             </muxc:NavigationView.MenuItems>
-        </muxc:NavigationView>
-                <Pivot Grid.Column="1" Height="Auto" Title="My Music" SelectionChanged="Pivot_SelectionChanged">
-                <Pivot.Items>
-                    <PivotItem Header="Songs">
-                    <Grid Margin="2" >
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="100"/>
-                                    <RowDefinition Height="1*"/>
-                                </Grid.RowDefinitions>
+		    </muxc:NavigationView>
+				<Frame Grid.Column="1" Name="CentreFrame">
+				
+			
+			    </Frame>
+			</Grid>
+		</Grid>
+		<MediaPlayerElement  AutoPlay="True" IsFullWindow="False" Grid.Row="1" Height="110" VerticalAlignment="Bottom" x:Name="MediaPlayer" AreTransportControlsEnabled="True" HorizontalAlignment="Stretch">
+            <MediaPlayerElement.TransportControls>
+                <MediaTransportControls IsNextTrackButtonVisible="True" IsPreviousTrackButtonVisible="True"  />
+            </MediaPlayerElement.TransportControls>
+        </MediaPlayerElement>
 
-                            <StackPanel Orientation="Horizontal" Margin="2" Background="LightGray">
-                            <Button Name="AddSong" Click="AddSong_Click" Content="Add Song" Margin="10"/>
-                            <Button Name="SelectPhoto" Click="SelectPhoto_ClickAsync" Content="Select Photo"/>
-                            <Image Name="Cover" Stretch="Uniform" Height="100" Width="100"/>
-                        </StackPanel>
-                          <Grid Grid.Row="1" Name="SongsGrid" HorizontalAlignment="Stretch">
-                                <ListView Name="listOfSongs" HorizontalAlignment="Stretch" ItemsSource="{Binding}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                                          ScrollViewer.IsHorizontalRailEnabled="True" ScrollViewer.HorizontalScrollMode="Auto">
-                                        <ListView.HeaderTemplate>
-                                            <DataTemplate>
-                                                <Grid Padding="12" Background="{ThemeResource SystemBaseLowColor}" HorizontalAlignment="Stretch">
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="450" />
-                                                        <ColumnDefinition Width="1*" MinWidth="250"/>
-                                                        <ColumnDefinition Width="1*" MinWidth="250"/>
-                                                        <ColumnDefinition Width="Auto"/>
-                                                    </Grid.ColumnDefinitions>
-                                                    <TextBlock HorizontalAlignment="Left" Text="Title" Style="{ThemeResource CaptionTextBlockStyle}"/>
-                                                    <TextBlock HorizontalAlignment="Left" Grid.Column="1" Text="Album Name" Style="{ThemeResource CaptionTextBlockStyle}"/>
-                                                    <TextBlock HorizontalAlignment="Left" Grid.Column="2" Text="Artist" Style="{ThemeResource CaptionTextBlockStyle}"/>
-                                                    <TextBlock HorizontalAlignment="Left" Grid.Column="3" Text="Duration"/>
-                                                </Grid>
-                                            </DataTemplate>
-                                        </ListView.HeaderTemplate>
-                                  <ListView.ItemTemplate>
-                                    <DataTemplate x:Name="TableDataTemplate" x:DataType="local:Song">
-                                        <Grid Height="Auto" Padding="12" Width="{Binding ElementName=listOfSongs, Path=ActualWidth}" MinWidth="1000" HorizontalAlignment="Left" Margin="-10,0,0,0">
-                                           <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="450"/>
-                                                        <ColumnDefinition Width="1*" MinWidth="250"/>
-                                               <ColumnDefinition Width="1*" MinWidth="250"/>
-                                               <ColumnDefinition Width="Auto"/>
-                                               <ColumnDefinition Width="Auto"/>
-                                           </Grid.ColumnDefinitions>
-                                                    <CheckBox Width="450" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{x:Bind Title}" />
-                                                    
-                                                    <TextBlock HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center" Text="{x:Bind AlbumName}" Style="{ThemeResource CaptionTextBlockStyle}"/>
-                                                    <TextBlock HorizontalAlignment="Left" Grid.Column="2" VerticalAlignment="Center" Text="{x:Bind Artist}" Style="{ThemeResource CaptionTextBlockStyle}" />
-                                                    <TextBlock HorizontalAlignment="Center" Grid.Column="3" VerticalAlignment="Center" Text="{x:Bind DurationStr}"/>
-                                                    <Button Margin="5,0,0,0" Content="Play"  Grid.Column="4" Click="DeleteSong_Click" Tag="{x:Bind Title}"/>
-                                                </Grid>
-                                    </DataTemplate>
-                                  </ListView.ItemTemplate>
-                                </ListView>
-                          </Grid>
-                    </Grid>
-                    </PivotItem>
-                    <PivotItem Header="Albums">
-                            <GridView ItemsSource="{Binding}" Name="AlbumGrid">
-                                <GridView.ItemTemplate>
-                                    <DataTemplate x:Name="MusicGalleryDataTemplate" x:DataType="local:Album">
-                                        <StackPanel Height="280" Width="180" Margin="12" BorderThickness="3" >
-                                            <Image Source="Assets/AlbumCover.png" Height="180" Width="180" Stretch="UniformToFill"/>
-                                            <StackPanel Margin="0,12">
-                                                <TextBlock Text="{x:Bind AlbumName}" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </GridView.ItemTemplate>
-                                <GridView.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <ItemsWrapGrid MaximumRowsOrColumns="3" Orientation="Horizontal"/>
-                                    </ItemsPanelTemplate>
-                                </GridView.ItemsPanel>
-                            </GridView>
-                        </PivotItem>
-                </Pivot.Items>
-            </Pivot>
-        </Grid>
-        </Grid>
-        <MediaElement IsFullWindow="False" Grid.Row="1" Height="110" VerticalAlignment="Bottom" x:Name="MediaPlayer" AreTransportControlsEnabled="True" HorizontalAlignment="Stretch">
-            </MediaElement>
-
-    </Grid>
+	</Grid>
 </Page>

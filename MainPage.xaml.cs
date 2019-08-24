@@ -32,30 +32,45 @@ namespace GeetApp
         {
             this.InitializeComponent();
         }
-
         public PlayList currentPlayList;
         public Collection collection;
+        public MainPageParams pageParams;
+
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             var myMusic = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.Storage.KnownLibraryId.Music);
             IObservableVector<StorageFolder> myMusicFolders = myMusic.Folders;
             collection = new Collection();
-            foreach(var fold in myMusicFolders)
+            foreach (var fold in myMusicFolders)
             {
                 var query = fold.CreateFileQueryWithOptions(new Windows.Storage.Search.QueryOptions(Windows.Storage.Search.CommonFileQuery.OrderByTitle, new string[] { ".mp3" }));
                 var list = await query.GetFilesAsync();
-                foreach(var file in list)
+                foreach (var file in list)
                 {
                     Song song = await CreateSongFromFileAsync(file);
                     collection.Add(song);
                 }
             }
-            listOfSongs.DataContext = collection.GetListofSongs();
+            pageParams = new MainPageParams();
+            pageParams.CentreFrame = CentreFrame;
+            pageParams.MediaPlayer = MediaPlayer;
+            //pageParams.NavigationControlView = NavigationControlView;
+            pageParams.collection = collection;
+            List<string> ListofPlaylistName = new List<string>();
+            var storageFolder = ApplicationData.Current.LocalFolder;
+            var files = await storageFolder.GetFilesAsync();
+            foreach(var file in files)
+            {
+                ListofPlaylistName.Add(file.Name);
+            }
+            pageParams.ListofPlaylistName = ListofPlaylistName;
+            CentreFrame.Navigate(typeof(PivotDisplay), pageParams);
+
         }
         private async System.Threading.Tasks.Task<Song> CreateSongFromFileAsync(StorageFile file)
         {
-            if(file != null)
+            if (file != null)
             {
                 MusicProperties musicProperties = await file.Properties.GetMusicPropertiesAsync();
                 Song song = new Song
@@ -64,17 +79,17 @@ namespace GeetApp
                     Artist = musicProperties.Artist,
                     Duration = musicProperties.Duration,
                     AlbumName = musicProperties.Album,
-                    Path = file.Path                    
+                    Path = file.Path
                 };
-                if(song.Title.Length == 0)
+                if (song.Title.Length == 0)
                 {
                     song.Title = file.DisplayName;
                 }
-                if(song.Artist.Length == 0)
+                if (song.Artist.Length == 0)
                 {
                     song.Artist = "Unknown Artist";
                 }
-                if(song.AlbumName.Length == 0)
+                if (song.AlbumName.Length == 0)
                 {
                     song.AlbumName = "Unknown Album";
                 }
@@ -83,82 +98,15 @@ namespace GeetApp
             return null;
         }
 
-        private async void AddSong_Click(object sender, RoutedEventArgs e)
+        private void NavigationControlView_BackRequested(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewBackRequestedEventArgs args)
         {
-            FileOpenPicker openPicker = new FileOpenPicker();
-            openPicker.ViewMode = PickerViewMode.Thumbnail;
-            openPicker.SuggestedStartLocation = PickerLocationId.MusicLibrary;
-            openPicker.FileTypeFilter.Add(".mp3");
-            
-
-            IReadOnlyList<StorageFile> fileList = await openPicker.PickMultipleFilesAsync();
-            List<Song> listOfSongs = new List<Song>();
-            
-            foreach(var file in fileList)
-            {
-                Song song = await CreateSongFromFileAsync(file);
-                listOfSongs.Add(song);
-            }
-            this.currentPlayList.songs.AddRange(listOfSongs);
-            this.DataContext = null;
-            this.DataContext = currentPlayList.songs;
-            
-            PlayList p = new PlayList();
-            p.songs = listOfSongs;
-            p.WriteToFileAsync();
+            CentreFrame.GoBack();
         }
 
-        private async void DeleteSong_Click(object sender, RoutedEventArgs e)
+        private void MyMusicMenu_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            DependencyObject iterator = sender as DependencyObject;
-
-            while(!(iterator is ListViewItem))
-            {
-                iterator = VisualTreeHelper.GetParent(iterator);
-
-            }
-            DependencyObject parent = VisualTreeHelper.GetParent(iterator);
-            Panel panel = parent as Panel;
-            int index = panel.Children.IndexOf(iterator as UIElement);
-            StorageFile file = await StorageFile.GetFileFromPathAsync(currentPlayList.songs[index].Path);
-
-            var songStream = await file.OpenAsync(FileAccessMode.Read);
-            MediaPlayer.SetSource(songStream, "audio/mpeg");
-            MediaPlaybackList playbacklist = new MediaPlaybackList();
-            MediaPlayer.Play();
-                       
-        }
-
-        private async void SelectPhoto_ClickAsync(object sender, RoutedEventArgs e)
-        {
-            FileOpenPicker openPicker = new FileOpenPicker();
-            openPicker.ViewMode = PickerViewMode.Thumbnail;
-            openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-            openPicker.FileTypeFilter.Add(".jpg");
-            StorageFile file = await openPicker.PickSingleFileAsync();
-            var imageStream= await file.OpenAsync(FileAccessMode.Read);
-            string path = file.Path;
-            BitmapImage bitMap = new BitmapImage();
-            await bitMap.SetSourceAsync(imageStream);
-            Cover.Source = bitMap;
-
-        }
-
-        private void Pivot_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            PivotItem pivot = null;
-            pivot = (PivotItem)(sender as Pivot).SelectedItem;
-            switch (pivot.Header.ToString())
-            {
-                case "Songs":
-                    if(collection != null)
-                        listOfSongs.DataContext = collection.GetListofSongs();
-                    break;
-                case "Albums":
-                    if(collection != null)
-                        AlbumGrid.DataContext = collection.GetListofAlbums();
-                    break;
-            }
+            CentreFrame.Navigate(typeof(PivotDisplay), pageParams);
         }
     }
 }
+        
