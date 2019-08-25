@@ -25,11 +25,13 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="4">
                 <TextBlock Text="CoverImage" Width="150"  Height="30" />
-                <Image Name="CoverImage" Source="{Binding}" Width="150"  Height="300" />
+                <Image Name="CoverImage" Source="{Binding}" Width="150"  Height="300" DoubleTapped="ChangeImage_DoubleTapped"/>
             </StackPanel>
+            <Button Name="SaveSong" Content="Save" Click="SaveSong_Click" />
 
 
         </StackPanel>
+        
 
 
     </Grid>
