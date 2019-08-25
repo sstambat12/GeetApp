@@ -125,7 +125,7 @@ namespace GeetApp
         {
             if (file != null)
             {
-                StorageItemThumbnail thumb = await file.GetScaledImageAsThumbnailAsync(ThumbnailMode.PicturesView);
+                StorageItemThumbnail thumb = await file.GetScaledImageAsThumbnailAsync(ThumbnailMode.MusicView, 200, ThumbnailOptions.ResizeThumbnail);
                 if (thumb != null)
                 {
                     BitmapImage img = new BitmapImage();

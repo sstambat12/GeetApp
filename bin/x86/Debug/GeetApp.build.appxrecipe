@@ -421,6 +421,9 @@
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\CreatePlaylistDialog.xbf">
       <PackagePath>CreatePlaylistDialog.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\DisplaySongDetails.xbf">
+      <PackagePath>DisplaySongDetails.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>

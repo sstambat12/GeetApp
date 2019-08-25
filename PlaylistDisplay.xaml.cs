@@ -37,6 +37,11 @@ namespace GeetApp
             CentreFrame = tuple.Item2;
             listOfSongs.DataContext = playList.songs;
             Title.Text = playList.Name;
+            if(playList.songs.Count>0)
+            {
+               // PlaylistImage.Source = playList.songs[0].CoverImage;
+            }
+            
                                                                                                         
 
         }

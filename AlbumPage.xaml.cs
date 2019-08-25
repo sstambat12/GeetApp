@@ -32,6 +32,7 @@ namespace GeetApp
         {
             base.OnNavigatedTo(e);
             Album album = e.Parameter as Album;
+            AlbumImage.Source = album.CoverImage;
             Title.Text = album.AlbumName;
             listOfSongs.DataContext = album.Songs;
         }

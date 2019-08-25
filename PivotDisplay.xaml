@@ -52,7 +52,7 @@
                                         <TextBlock HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center" Text="{x:Bind AlbumName}" Style="{ThemeResource CaptionTextBlockStyle}"/>
                                         <TextBlock HorizontalAlignment="Left" Grid.Column="2" VerticalAlignment="Center" Text="{x:Bind Artist}" Style="{ThemeResource CaptionTextBlockStyle}" />
                                         <TextBlock HorizontalAlignment="Center" Grid.Column="3" VerticalAlignment="Center" Text="{x:Bind DurationStr}"/>
-                                        <Button Margin="5,0,0,0" Content="Play"  Grid.Column="4" Click="DeleteSong_Click" Tag="{x:Bind Title}"/>
+                                        <Button Margin="5,0,0,0" Content="Play"  Grid.Column="4" Click="PlaySong_Click" Tag="{x:Bind Title}"/>
                                         <Button Name="EditSong"  Margin="5,0,0,0" Content="Edit"  Grid.Column="5" Click="EditSong_Click" Tag="{x:Bind Title}" />
                                     </Grid>
                                 </DataTemplate>
@@ -66,7 +66,7 @@
                     <GridView.ItemTemplate>
                         <DataTemplate x:Name="MusicGalleryDataTemplate" x:DataType="local:Album">
                             <StackPanel Height="200" Width="200" Margin="12" BorderThickness="3" Tapped="StackPanel_Tapped" >
-                                <Image Source="Assets/AlbumCover.png" Height="180" Width="180" Stretch="UniformToFill"/>
+                                <Image Source="{x:Bind CoverImage}" Height="180" Width="180" Stretch="UniformToFill"/>
                                 <TextBlock Text="{x:Bind AlbumName}" Style="{ThemeResource CaptionTextBlockStyle}" Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"/>
                             </StackPanel>
                         </DataTemplate>

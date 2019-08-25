@@ -21,7 +21,7 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Image Source="Assets/AlbumCover.png" Height="180" Width="180" Stretch="UniformToFill"/>
+            <Image Name="PlaylistImage" Source="Assets/AlbumCover.png" Height="180" Width="180" Stretch="UniformToFill"/>
             <TextBlock Grid.Column="1" Name="Title" Text="Playlist Name" FontSize="30" Margin="30,0,0,0" VerticalAlignment="Center" Width="200" />
             <Button Grid.Column="2" Content="Play All" Click="PlayAll_Click" VerticalAlignment="Center" FontSize="20" Margin="30,0,0,0" Width="100"/>
             <Button Grid.Column="3" Content="Delete Playlist" Click="DeletePlaylist_Click" VerticalAlignment="Center" Margin="30,0,0,0" Width="Auto"/>

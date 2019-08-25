@@ -43,6 +43,7 @@
             <MediaPlayerElement.TransportControls>
                 <MediaTransportControls IsNextTrackButtonVisible="True" IsPreviousTrackButtonVisible="True"  />
             </MediaPlayerElement.TransportControls>
+            
         </MediaPlayerElement>
 
 	</Grid>

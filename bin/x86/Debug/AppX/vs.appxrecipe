@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-08-24T20:53:24.174</Modified>
+      <Modified>2019-08-25T08:50:56.272</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\GeetApp.exe">
       <PackagePath>entrypoint\GeetApp.exe</PackagePath>
-      <Modified>2019-08-24T20:53:19.545</Modified>
+      <Modified>2019-08-25T08:50:55.575</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -542,35 +542,39 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\GeetApp.xr.xml">
       <PackagePath>GeetApp.xr.xml</PackagePath>
-      <Modified>2019-08-24T10:01:37.712</Modified>
+      <Modified>2019-08-25T08:43:01.024</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf">
       <PackagePath>Microsoft.UI.Xaml\DensityStyles\Compact.xbf</PackagePath>
-      <Modified>2019-08-24T20:53:19.225</Modified>
+      <Modified>2019-08-25T08:50:55.231</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-08-24T20:53:19.226</Modified>
+      <Modified>2019-08-25T08:50:55.232</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\AlbumPage.xbf">
       <PackagePath>AlbumPage.xbf</PackagePath>
-      <Modified>2019-08-24T20:53:19.226</Modified>
+      <Modified>2019-08-25T08:50:55.233</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\CreatePlaylistDialog.xbf">
       <PackagePath>CreatePlaylistDialog.xbf</PackagePath>
-      <Modified>2019-08-24T20:53:19.227</Modified>
+      <Modified>2019-08-25T08:50:55.233</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\DisplaySongDetails.xbf">
+      <PackagePath>DisplaySongDetails.xbf</PackagePath>
+      <Modified>2019-08-25T08:50:55.234</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-08-24T20:53:19.227</Modified>
+      <Modified>2019-08-25T08:50:55.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\PivotDisplay.xbf">
       <PackagePath>PivotDisplay.xbf</PackagePath>
-      <Modified>2019-08-24T20:53:19.228</Modified>
+      <Modified>2019-08-25T08:50:55.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\PlaylistDisplay.xbf">
       <PackagePath>PlaylistDisplay.xbf</PackagePath>
-      <Modified>2019-08-24T20:53:19.228</Modified>
+      <Modified>2019-08-25T08:50:55.236</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.18362.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -586,11 +590,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-08-24T20:53:22.001</Modified>
+      <Modified>2019-08-25T07:32:51.508</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\Core\GeetApp.exe">
       <PackagePath>GeetApp.exe</PackagePath>
-      <Modified>2019-08-24T20:53:24.150</Modified>
+      <Modified>2019-08-25T08:50:56.242</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

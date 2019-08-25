@@ -21,11 +21,11 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Image Source="Assets/AlbumCover.png" Height="180" Width="180" Stretch="UniformToFill"/>
-            <TextBlock x:ConnectionId='9' Grid.Column="1" Name="Title" Text="Playlist Name" FontSize="30" Margin="30,0,0,0" VerticalAlignment="Center" Width="200" />
-            <Button x:ConnectionId='10' Grid.Column="2" Content="Play All"                       VerticalAlignment="Center" FontSize="20" Margin="30,0,0,0" Width="100"/>
-            <Button x:ConnectionId='11' Grid.Column="3" Content="Delete Playlist"                              VerticalAlignment="Center" Margin="30,0,0,0" Width="Auto"/>
-            <Button x:ConnectionId='12' Grid.Column="4" Content="Delete From Playlist"                          VerticalAlignment="Center" Margin="30,0,0,0" Width="Auto"/>
+            <Image x:ConnectionId='9' Name="PlaylistImage" Source="Assets/AlbumCover.png" Height="180" Width="180" Stretch="UniformToFill"/>
+            <TextBlock x:ConnectionId='10' Grid.Column="1" Name="Title" Text="Playlist Name" FontSize="30" Margin="30,0,0,0" VerticalAlignment="Center" Width="200" />
+            <Button x:ConnectionId='11' Grid.Column="2" Content="Play All"                       VerticalAlignment="Center" FontSize="20" Margin="30,0,0,0" Width="100"/>
+            <Button x:ConnectionId='12' Grid.Column="3" Content="Delete Playlist"                              VerticalAlignment="Center" Margin="30,0,0,0" Width="Auto"/>
+            <Button x:ConnectionId='13' Grid.Column="4" Content="Delete From Playlist"                          VerticalAlignment="Center" Margin="30,0,0,0" Width="Auto"/>
         </Grid>
         <ListView x:ConnectionId='2' SelectionMode="Multiple" Grid.Row="1" Name="listOfSongs" HorizontalAlignment="Stretch" ItemsSource="{Binding}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"
 										  ScrollViewer.IsHorizontalRailEnabled="True" ScrollViewer.HorizontalScrollMode="Auto">

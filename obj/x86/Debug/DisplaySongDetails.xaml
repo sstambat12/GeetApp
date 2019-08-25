@@ -13,21 +13,21 @@
         <StackPanel Orientation="Vertical" Margin="4" >
             <StackPanel Orientation="Horizontal" Margin="4">
                 <TextBlock Text="Title" Width="150"  Height="30" />
-                <TextBox Name="title" Text="{Binding}" Width="400" Height="30" BorderThickness="0"  TextChanged="save_title"/>
+                <TextBox x:ConnectionId='6' Name="title" Text="{Binding}" Width="400" Height="30" BorderThickness="0"                          />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="4">
                 <TextBlock Text="Album" Width="150"  Height="30" />
-                <TextBox Name="album" Text="{Binding}" Width="400" Height="30" BorderThickness="0" TextChanged="save_album"/>
+                <TextBox x:ConnectionId='5' Name="album" Text="{Binding}" Width="400" Height="30" BorderThickness="0"                         />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="4">
                 <TextBlock Text="Artist" Width="150"  Height="30" />
-                <TextBox Name="artist" Text="{Binding}" Width="400" Height="30" BorderThickness="0" TextChanged="save_artist"/>
+                <TextBox x:ConnectionId='4' Name="artist" Text="{Binding}" Width="400" Height="30" BorderThickness="0"                          />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="4">
                 <TextBlock Text="CoverImage" Width="150"  Height="30" />
-                <Image Name="CoverImage" Source="{Binding}" Width="200"  Height="200" DoubleTapped="ChangeImage_DoubleTapped"/>
+                <Image x:ConnectionId='3' Name="CoverImage" Source="{Binding}" Width="200"  Height="200"                                        />
             </StackPanel>
-            <Button Name="SaveSong" Content="Save" Click="SaveSong_Click" />
+            <Button x:ConnectionId='2' Name="SaveSong" Content="Save"                        />
 
 
         </StackPanel>
@@ -36,3 +36,4 @@
 
     </Grid>
 </Page>
+

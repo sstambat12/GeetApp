@@ -242,3 +242,8 @@ C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\obj\x86\Debug\CreatePlayl
 C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\obj\x86\Debug\CreatePlaylistDialog.xaml
 C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\obj\x86\Debug\CreatePlaylistDialog.xbf
 C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885562160000000.json
+C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\obj\x86\Debug\DisplaySongDetails.g.i.cs
+C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\obj\x86\Debug\DisplaySongDetails.g.cs
+C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\obj\x86\Debug\DisplaySongDetails.xaml
+C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\obj\x86\Debug\DisplaySongDetails.xbf
+C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\DisplaySongDetails.xbf

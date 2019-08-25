@@ -19,7 +19,7 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Image Source="Assets/AlbumCover.png" Height="180" Width="180" Stretch="UniformToFill"/>
+            <Image Name="AlbumImage" Height="180" Width="180" Stretch="UniformToFill"/>
             <TextBlock Grid.Column="1" Name="Title" Text="Title" FontSize="30" Margin="30,0,0,0" VerticalAlignment="Center" Width="250" />
             <Button Grid.Column="2" Content="Play All" Click="PlayAll_Click" VerticalAlignment="Center" FontSize="20" Margin="30,0,0,0" Width="100"/>
         </Grid>

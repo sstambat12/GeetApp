@@ -39,6 +39,7 @@ namespace GeetApp
                     continue;
 
                 var lineParts = line.Split(',');
+                
                 var song = new Song
                 {
                     Title = lineParts[0],

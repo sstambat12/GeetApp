@@ -40,23 +40,23 @@ namespace GeetApp
             var song = (Song)e.Parameter;
             this.song = song;
             title.DataContext = song.Title;
-            album.DataContext = song.Artist;
-            artist.DataContext = song.AlbumName;
+            album.DataContext = song.AlbumName;
+            artist.DataContext = song.Artist;
             
             CoverImage.DataContext = song.CoverImage;
         }
 
-        private async void save_title(object sender, TextChangedEventArgs args)
+        private void save_title(object sender, TextChangedEventArgs args)
         {
             this.song.Title = title.Text;
         }
 
-        private async void save_album(object sender, TextChangedEventArgs args)
+        private void save_album(object sender, TextChangedEventArgs args)
         {
             this.song.AlbumName = album.Text;
 
         }
-        private async void save_artist(object sender, TextChangedEventArgs args)
+        private void save_artist(object sender, TextChangedEventArgs args)
         {
             this.song.Artist = artist.Text;
         }
@@ -95,7 +95,6 @@ namespace GeetApp
             musicProperties.Album = song.AlbumName;
             await musicProperties.SavePropertiesAsync();
             StorageItemThumbnail thumb = await musicFile.GetScaledImageAsThumbnailAsync(ThumbnailMode.PicturesView);
-            
         }
 
         
