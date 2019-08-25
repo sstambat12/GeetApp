@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Media.Core;
@@ -73,23 +74,27 @@ namespace GeetApp
             if (file != null)
             {
                 MusicProperties musicProperties = await file.Properties.GetMusicPropertiesAsync();
+                BitmapImage image = await GetThumbnail(file);
+
                 Song song = new Song
                 {
                     Title = musicProperties.Title,
                     Artist = musicProperties.Artist,
                     Duration = musicProperties.Duration,
                     AlbumName = musicProperties.Album,
-                    Path = file.Path
-                };
-                if (song.Title.Length == 0)
+                    Path = file.Path,
+                    FileName=file.Name,
+                    CoverImage=image
+            };
+                if (string.IsNullOrEmpty(song.Title))
                 {
                     song.Title = file.DisplayName;
                 }
-                if (song.Artist.Length == 0)
+                if (string.IsNullOrEmpty(song.Artist))
                 {
                     song.Artist = "Unknown Artist";
                 }
-                if (song.AlbumName.Length == 0)
+                if (string.IsNullOrEmpty(song.AlbumName))
                 {
                     song.AlbumName = "Unknown Album";
                 }
@@ -97,6 +102,22 @@ namespace GeetApp
             }
             return null;
         }
+        private async static Task<BitmapImage> GetThumbnail(StorageFile file)
+        {
+            if (file != null)
+            {
+                StorageItemThumbnail thumb = await file.GetScaledImageAsThumbnailAsync(ThumbnailMode.VideosView);
+                if (thumb != null)
+                {
+                    BitmapImage img = new BitmapImage();
+                    await img.SetSourceAsync(thumb);
+                    return img;
+                }
+            }
+            return null;
+        }
+
+
 
         private void NavigationControlView_BackRequested(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewBackRequestedEventArgs args)
         {

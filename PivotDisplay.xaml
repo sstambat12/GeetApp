@@ -40,10 +40,11 @@
                                 <DataTemplate x:Name="TableDataTemplate" x:DataType="local:Song">
                                     <Grid Height="Auto" Padding="12" HorizontalAlignment="Stretch" MinWidth="1000" Margin="-10,0,0,0">
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="350"/>
+                                            <ColumnDefinition Width="250"/>
                                             <ColumnDefinition Width="1*" MinWidth="250"/>
                                             <ColumnDefinition Width="1*" MinWidth="250"/>
                                             <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="1*"/>
                                             <ColumnDefinition Width="1*"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock  Width="450" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{x:Bind Title}" />
@@ -52,6 +53,7 @@
                                         <TextBlock HorizontalAlignment="Left" Grid.Column="2" VerticalAlignment="Center" Text="{x:Bind Artist}" Style="{ThemeResource CaptionTextBlockStyle}" />
                                         <TextBlock HorizontalAlignment="Center" Grid.Column="3" VerticalAlignment="Center" Text="{x:Bind DurationStr}"/>
                                         <Button Margin="5,0,0,0" Content="Play"  Grid.Column="4" Click="DeleteSong_Click" Tag="{x:Bind Title}"/>
+                                        <Button Name="EditSong"  Margin="5,0,0,0" Content="Edit"  Grid.Column="5" Click="EditSong_Click" Tag="{x:Bind Title}" />
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
