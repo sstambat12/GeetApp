@@ -79,7 +79,25 @@ namespace GeetApp
             MediaHelper.MediaPlayer.Source = playbackList;
         }
 
-        private async void SelectPhoto_ClickAsync(object sender, RoutedEventArgs e)
+        private async void EditSong_Click(object sender, RoutedEventArgs e)
+        {
+            DependencyObject iterator = sender as DependencyObject;
+
+            while (!(iterator is ListViewItem))
+            {
+                iterator = VisualTreeHelper.GetParent(iterator);
+
+            }
+            DependencyObject parent = VisualTreeHelper.GetParent(iterator);
+            Panel panel = parent as Panel;
+            int index = panel.Children.IndexOf(iterator as UIElement);
+            List<Song> list = listOfSongs.DataContext as List<Song>;
+
+            this.Frame.Navigate(typeof(DisplaySongDetails), list[index]);
+        }
+
+
+            private async void SelectPhoto_ClickAsync(object sender, RoutedEventArgs e)
         {
             FileOpenPicker openPicker = new FileOpenPicker();
             openPicker.ViewMode = PickerViewMode.Thumbnail;
