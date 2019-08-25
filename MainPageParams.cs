@@ -11,9 +11,9 @@ namespace GeetApp
     {
         public Frame CentreFrame { get; set; }
         public NavigationView NavigationControlView { get; set; }
-        public MediaPlayerElement MediaPlayer { get; set; }
+        
         public Collection collection { get; set; }
 
-        public List<string> ListofPlaylistName { get; set; }
+        //public List<string> ListofPlaylistName { get; set; }
     }
 }

@@ -51,7 +51,7 @@
                                         <TextBlock HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center" Text="{x:Bind AlbumName}" Style="{ThemeResource CaptionTextBlockStyle}"/>
                                         <TextBlock HorizontalAlignment="Left" Grid.Column="2" VerticalAlignment="Center" Text="{x:Bind Artist}" Style="{ThemeResource CaptionTextBlockStyle}" />
                                         <TextBlock HorizontalAlignment="Center" Grid.Column="3" VerticalAlignment="Center" Text="{x:Bind DurationStr}"/>
-                                        <Button Margin="5,0,0,0" Content="Play"  Grid.Column="4" Click="DeleteSong_Click" Tag="{x:Bind Title}"/>
+                                        <Button Margin="5,0,0,0" Content="Play"  Grid.Column="4" Click="PlaySong_Click" Tag="{x:Bind Title}"/>
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>

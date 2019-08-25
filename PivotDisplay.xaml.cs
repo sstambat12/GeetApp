@@ -43,7 +43,7 @@ namespace GeetApp
             listOfSongs.DataContext = collection.GetListofSongs();
 
             
-            List<string> PlaylistNames = mainPageParams.ListofPlaylistName;
+            List<string> PlaylistNames = PlayList.UserPlayLists;
             foreach(var name in PlaylistNames)
             {
                 MenuFlyoutItem menuflyoutitem = new MenuFlyoutItem();
@@ -57,11 +57,10 @@ namespace GeetApp
 
         private void AddTo_Click(object sender, RoutedEventArgs e)
         {
-            
-            FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
+           FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
         }
 
-        private async void DeleteSong_Click(object sender, RoutedEventArgs e)
+        private async void PlaySong_Click(object sender, RoutedEventArgs e)
         {
             DependencyObject iterator = sender as DependencyObject;
 
@@ -74,12 +73,10 @@ namespace GeetApp
             Panel panel = parent as Panel;
             int index = panel.Children.IndexOf(iterator as UIElement);
             List<Song> list = listOfSongs.DataContext as List<Song>;
-            StorageFile file = await StorageFile.GetFileFromPathAsync(list[index].Path);
-
-            var songStream = await file.OpenAsync(FileAccessMode.Read);
-            //mainPageParams.MediaPlayer.SetSource(songStream, "audio/mpeg");
-            //mainPageParams.MediaPlayer.Play();
-
+            List<Song> songToPlay = new List<Song>();
+            songToPlay.Add(list[index]);
+            MediaPlaybackList playbackList = await MediaHelper.GetPlaybackList(songToPlay);
+            MediaHelper.MediaPlayer.Source = playbackList;
         }
 
         private async void SelectPhoto_ClickAsync(object sender, RoutedEventArgs e)
@@ -128,16 +125,9 @@ namespace GeetApp
         private async void PlayAll_Click(object sender, RoutedEventArgs e)
         {
             List<Song> list = listOfSongs.DataContext as List<Song>;
-            MediaPlaybackList playbacklist = new MediaPlaybackList();
-            playbacklist.AutoRepeatEnabled = true;
-             foreach(var song in list)
-            {
-                StorageFile file = await StorageFile.GetFileFromPathAsync(song.Path);
-                MediaSource source = MediaSource.CreateFromStorageFile(file);
-                playbacklist.Items.Add(new MediaPlaybackItem(source));
-            }
+            MediaPlaybackList playbacklist = await MediaHelper.GetPlaybackList(list);
             playbacklist.ShuffleEnabled = true;
-            mainPageParams.MediaPlayer.Source = playbacklist;
+            MediaHelper.MediaPlayer.Source = playbacklist;
 
         }
 
@@ -155,6 +145,10 @@ namespace GeetApp
         {
             CreatePlaylistDialog dialog = new CreatePlaylistDialog();
             var result = await dialog.ShowAsync();
+            if(result == ContentDialogResult.Secondary)
+            {
+                return;
+            }
             string playlistName = dialog.PlaylistName;
             List<Song> PlaylistSongs = new List<Song>();
             var Indexes = listOfSongs.SelectedRanges;
@@ -170,7 +164,10 @@ namespace GeetApp
             playList.Name = playlistName;
             playList.songs = PlaylistSongs;
             playList.WriteToFileAsync();
-            mainPageParams.CentreFrame.Navigate(typeof(PlaylistDisplay), playList);
+            PlayList.UserPlayLists.Add(playlistName);
+            PlayList.PlaylistAdded.Invoke(playlistName, new EventArgs());
+            Tuple<PlayList, Frame> tuple = new Tuple<PlayList, Frame>(playList, mainPageParams.CentreFrame);
+            mainPageParams.CentreFrame.Navigate(typeof(PlaylistDisplay), tuple);
         }
 
         private async void PlaylistName_Click(object sender, RoutedEventArgs e)
@@ -199,7 +196,8 @@ namespace GeetApp
 
             // Display Playlist object in PlaylistDisplay Page
             playList.WriteToFileAsync();
-            mainPageParams.CentreFrame.Navigate(typeof(PlaylistDisplay), playList);
+            Tuple<PlayList, Frame> tuple = new Tuple<PlayList, Frame>(playList, mainPageParams.CentreFrame);
+            mainPageParams.CentreFrame.Navigate(typeof(PlaylistDisplay), tuple);
         }
     }
 }

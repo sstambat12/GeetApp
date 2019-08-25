@@ -15,17 +15,19 @@
         </Grid.RowDefinitions>
         <Grid Background="LightGray">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="350" />
+                <ColumnDefinition Width="250" />
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Image Source="Assets/AlbumCover.png" Height="180" Width="180" Stretch="UniformToFill"/>
-            <TextBlock Grid.Column="1" Name="Title" Text="Playlist Name" FontSize="30" Margin="30,0,0,0" VerticalAlignment="Center" Width="250" />
-            <Button Grid.Column="2" Content="Play All" VerticalAlignment="Center" FontSize="20" Margin="30,0,0,0" Width="100"/>
-            <Button Grid.Column="3" Content="Delete" VerticalAlignment="Center" FontSize="20" Margin="30,0,0,0" Width="100"/>
+            <TextBlock Grid.Column="1" Name="Title" Text="Playlist Name" FontSize="30" Margin="30,0,0,0" VerticalAlignment="Center" Width="200" />
+            <Button Grid.Column="2" Content="Play All" Click="PlayAll_Click" VerticalAlignment="Center" FontSize="20" Margin="30,0,0,0" Width="100"/>
+            <Button Grid.Column="3" Content="Delete Playlist" Click="DeletePlaylist_Click" VerticalAlignment="Center" Margin="30,0,0,0" Width="Auto"/>
+            <Button Grid.Column="4" Content="Delete From Playlist" Click="DeleteSong_Click" VerticalAlignment="Center" Margin="30,0,0,0" Width="Auto"/>
         </Grid>
-        <ListView Grid.Row="1" Name="listOfSongs" HorizontalAlignment="Stretch" ItemsSource="{Binding}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+        <ListView SelectionMode="Multiple" Grid.Row="1" Name="listOfSongs" HorizontalAlignment="Stretch" ItemsSource="{Binding}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"
 										  ScrollViewer.IsHorizontalRailEnabled="True" ScrollViewer.HorizontalScrollMode="Auto">
             <ListView.ItemTemplate>
                 <DataTemplate x:Name="TableDataTemplate" x:DataType="local:Song">
@@ -36,8 +38,8 @@
                             <ColumnDefinition Width="100"/>
                             <ColumnDefinition Width="100"/>
                         </Grid.ColumnDefinitions>
-                        <CheckBox Width="450" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{x:Bind Title}" />
-                        <TextBlock HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center" Text="{x:Bind Artist}" Style="{ThemeResource CaptionTextBlockStyle}" />
+                        <TextBlock HorizontalAlignment="Left" Grid.Column="0" VerticalAlignment="Center" Text="{x:Bind Title}" Style="{ThemeResource CaptionTextBlockStyle}" />
+                         <TextBlock HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center" Text="{x:Bind Artist}" Style="{ThemeResource CaptionTextBlockStyle}" />
                         <TextBlock HorizontalAlignment="Center" Grid.Column="2" VerticalAlignment="Center" Text="{x:Bind DurationStr}"/>
                         <Button Margin="15,0,0,0" Content="Play"  Grid.Column="3" Click="PlayButton_Click"  HorizontalAlignment="Right"/>
                     </Grid>

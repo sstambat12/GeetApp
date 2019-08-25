@@ -54,7 +54,7 @@ namespace GeetApp
             }
             pageParams = new MainPageParams();
             pageParams.CentreFrame = CentreFrame;
-            pageParams.MediaPlayer = MediaPlayer;
+            MediaHelper.MediaPlayer = MediaPlayer;
             //pageParams.NavigationControlView = NavigationControlView;
             pageParams.collection = collection;
             List<string> ListofPlaylistName = new List<string>();
@@ -64,10 +64,29 @@ namespace GeetApp
             {
                 ListofPlaylistName.Add(file.Name);
             }
-            pageParams.ListofPlaylistName = ListofPlaylistName;
+            PlayList.UserPlayLists = ListofPlaylistName;
+            PlayList.PlaylistAdded += PlaylistAdded;
+            PlayList.PlaylistDeleted += PlaylistDeleted;
+            foreach(var name in ListofPlaylistName)
+            {
+                Microsoft.UI.Xaml.Controls.NavigationViewItem viewItem = new Microsoft.UI.Xaml.Controls.NavigationViewItem();
+                viewItem.Content = name;
+                viewItem.Tapped += PlaylistSelected;
+                NavigationControlView.MenuItems.Add(viewItem);
+            }
+            
             CentreFrame.Navigate(typeof(PivotDisplay), pageParams);
 
         }
+
+        private async void PlaylistSelected(object sender, TappedRoutedEventArgs e)
+        {
+            string playlistName = (sender as Microsoft.UI.Xaml.Controls.NavigationViewItem).Content.ToString();
+            PlayList p = await PlayList.GetPlayListFromFileAsync(playlistName);
+            Tuple<PlayList, Frame> tuple = new Tuple<PlayList, Frame>(p, CentreFrame);
+            CentreFrame.Navigate(typeof(PlaylistDisplay), tuple);
+        }
+
         private async System.Threading.Tasks.Task<Song> CreateSongFromFileAsync(StorageFile file)
         {
             if (file != null)
@@ -106,6 +125,20 @@ namespace GeetApp
         private void MyMusicMenu_Tapped(object sender, TappedRoutedEventArgs e)
         {
             CentreFrame.Navigate(typeof(PivotDisplay), pageParams);
+        }
+
+        private void PlaylistDeleted(object sender, EventArgs e)
+        {
+            int index = (int)sender;
+            NavigationControlView.MenuItems.RemoveAt(index + 3);
+        }
+        private void PlaylistAdded(object sender, EventArgs e)
+        {
+            string playlistName = (string)sender;
+            Microsoft.UI.Xaml.Controls.NavigationViewItem viewItem = new Microsoft.UI.Xaml.Controls.NavigationViewItem();
+            viewItem.Content = playlistName;
+            viewItem.Tapped += PlaylistSelected;
+            NavigationControlView.MenuItems.Add(viewItem);
         }
     }
 }

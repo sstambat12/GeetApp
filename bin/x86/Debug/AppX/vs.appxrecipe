@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>9F78AE8A475295575AAA4EFE45958BDBA4162FD1F833CDC4C6F02DF58F3B8B1F</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>6084F56BD438B7FE4E84947CBAB281C5D66A273F803909C06D505D8EDA292D37</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>8014149f-715b-4d1b-a1dd-561ba08d9120_1.0.0.0_x86__apdxd72hpawqa</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>8014149f-715b-4d1b-a1dd-561ba08d9120_apdxd72hpawqa!App</RegisteredUserModeAppID>
     <RegisteredPackageID>8014149f-715b-4d1b-a1dd-561ba08d9120</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-08-24T03:12:15.247</Modified>
+      <Modified>2019-08-24T20:53:24.174</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\GeetApp.exe">
       <PackagePath>entrypoint\GeetApp.exe</PackagePath>
-      <Modified>2019-08-24T03:12:14.048</Modified>
+      <Modified>2019-08-24T20:53:19.545</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -494,9 +494,9 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2016-06-12T06:15:04.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.17763.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.18362.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
-      <Modified>2018-10-23T08:33:40.000</Modified>
+      <Modified>2019-03-19T01:36:56.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\Assets\AlbumCover.png">
       <PackagePath>Assets\AlbumCover.png</PackagePath>
@@ -542,43 +542,43 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\GeetApp.xr.xml">
       <PackagePath>GeetApp.xr.xml</PackagePath>
-      <Modified>2019-08-23T06:36:53.006</Modified>
+      <Modified>2019-08-24T10:01:37.712</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf">
       <PackagePath>Microsoft.UI.Xaml\DensityStyles\Compact.xbf</PackagePath>
-      <Modified>2019-08-24T03:12:13.773</Modified>
+      <Modified>2019-08-24T20:53:19.225</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-08-24T03:12:13.773</Modified>
+      <Modified>2019-08-24T20:53:19.226</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\AlbumPage.xbf">
       <PackagePath>AlbumPage.xbf</PackagePath>
-      <Modified>2019-08-24T03:12:13.774</Modified>
+      <Modified>2019-08-24T20:53:19.226</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\CreatePlaylistDialog.xbf">
       <PackagePath>CreatePlaylistDialog.xbf</PackagePath>
-      <Modified>2019-08-24T03:12:13.774</Modified>
+      <Modified>2019-08-24T20:53:19.227</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-08-24T03:12:13.775</Modified>
+      <Modified>2019-08-24T20:53:19.227</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\PivotDisplay.xbf">
       <PackagePath>PivotDisplay.xbf</PackagePath>
-      <Modified>2019-08-24T03:12:13.775</Modified>
+      <Modified>2019-08-24T20:53:19.228</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\PlaylistDisplay.xbf">
       <PackagePath>PlaylistDisplay.xbf</PackagePath>
-      <Modified>2019-08-24T03:12:13.776</Modified>
+      <Modified>2019-08-24T20:53:19.228</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17763.0\\redist\Debug\x86\ucrtbased.dll">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.18362.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
-      <Modified>2018-10-23T08:41:14.000</Modified>
+      <Modified>2019-03-19T01:43:58.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
-      <Modified>2018-10-23T07:44:28.000</Modified>
+      <Modified>2019-03-19T00:33:42.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\.nuget\packages\microsoft.ui.xaml\2.1.190606001\build\..\lib\uap10.0\Microsoft.UI.Xaml.winmd">
       <PackagePath>WinMetadata\Microsoft.UI.Xaml.winmd</PackagePath>
@@ -586,11 +586,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2019-08-23T06:36:56.761</Modified>
+      <Modified>2019-08-24T20:53:22.001</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\sujat\source\repos\KalAcadamy\GeetApp\GeetApp\bin\x86\Debug\Core\GeetApp.exe">
       <PackagePath>GeetApp.exe</PackagePath>
-      <Modified>2019-08-24T03:12:15.199</Modified>
+      <Modified>2019-08-24T20:53:24.150</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -21,7 +21,7 @@
             </Grid.ColumnDefinitions>
             <Image Source="Assets/AlbumCover.png" Height="180" Width="180" Stretch="UniformToFill"/>
             <TextBlock Grid.Column="1" Name="Title" Text="Title" FontSize="30" Margin="30,0,0,0" VerticalAlignment="Center" Width="250" />
-            <Button Grid.Column="2" Content="Play" VerticalAlignment="Center" FontSize="20" Margin="30,0,0,0" Width="100"/>
+            <Button Grid.Column="2" Content="Play All" Click="PlayAll_Click" VerticalAlignment="Center" FontSize="20" Margin="30,0,0,0" Width="100"/>
         </Grid>
         <ListView Grid.Row="1" Name="listOfSongs" HorizontalAlignment="Stretch" ItemsSource="{Binding}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"
 										  ScrollViewer.IsHorizontalRailEnabled="True" ScrollViewer.HorizontalScrollMode="Auto">
@@ -37,7 +37,7 @@
                         <CheckBox Width="450" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{x:Bind Title}" />
                         <TextBlock HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center" Text="{x:Bind Artist}" Style="{ThemeResource CaptionTextBlockStyle}" />
                         <TextBlock HorizontalAlignment="Center" Grid.Column="2" VerticalAlignment="Center" Text="{x:Bind DurationStr}"/>
-                        <Button Margin="15,0,0,0" Content="Play"  Grid.Column="3" Click="PlayButton_Click" HorizontalAlignment="Right"/>
+                        <Button Margin="15,0,0,0" Content="Play" Grid.Column="3" Click="PlayButton_Click" HorizontalAlignment="Right"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

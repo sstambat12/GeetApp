@@ -15,31 +15,33 @@
         </Grid.RowDefinitions>
         <Grid Background="LightGray">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="350" />
+                <ColumnDefinition Width="250" />
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Image Source="Assets/AlbumCover.png" Height="180" Width="180" Stretch="UniformToFill"/>
-            <TextBlock x:ConnectionId='8' Grid.Column="1" Name="Title" Text="Playlist Name" FontSize="30" Margin="30,0,0,0" VerticalAlignment="Center" Width="250" />
-            <Button Grid.Column="2" Content="Play All" VerticalAlignment="Center" FontSize="20" Margin="30,0,0,0" Width="100"/>
-            <Button Grid.Column="3" Content="Delete" VerticalAlignment="Center" FontSize="20" Margin="30,0,0,0" Width="100"/>
+            <TextBlock x:ConnectionId='9' Grid.Column="1" Name="Title" Text="Playlist Name" FontSize="30" Margin="30,0,0,0" VerticalAlignment="Center" Width="200" />
+            <Button x:ConnectionId='10' Grid.Column="2" Content="Play All"                       VerticalAlignment="Center" FontSize="20" Margin="30,0,0,0" Width="100"/>
+            <Button x:ConnectionId='11' Grid.Column="3" Content="Delete Playlist"                              VerticalAlignment="Center" Margin="30,0,0,0" Width="Auto"/>
+            <Button x:ConnectionId='12' Grid.Column="4" Content="Delete From Playlist"                          VerticalAlignment="Center" Margin="30,0,0,0" Width="Auto"/>
         </Grid>
-        <ListView x:ConnectionId='2' Grid.Row="1" Name="listOfSongs" HorizontalAlignment="Stretch" ItemsSource="{Binding}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+        <ListView x:ConnectionId='2' SelectionMode="Multiple" Grid.Row="1" Name="listOfSongs" HorizontalAlignment="Stretch" ItemsSource="{Binding}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"
 										  ScrollViewer.IsHorizontalRailEnabled="True" ScrollViewer.HorizontalScrollMode="Auto">
             <ListView.ItemTemplate>
                 <DataTemplate x:Name="TableDataTemplate"                        >
-                    <Grid x:ConnectionId='3' Height="Auto" Padding="12" Width="{Binding ElementName=listOfSongs, Path=ActualWidth}" MinWidth="1000">
+                    <Grid x:ConnectionId='4' Height="Auto" Padding="12" Width="{Binding ElementName=listOfSongs, Path=ActualWidth}" MinWidth="1000">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="450"/>
                             <ColumnDefinition Width="250" MinWidth="250"/>
                             <ColumnDefinition Width="100"/>
                             <ColumnDefinition Width="100"/>
                         </Grid.ColumnDefinitions>
-                        <CheckBox x:ConnectionId='4' Width="450" HorizontalAlignment="Left" VerticalAlignment="Center"                          />
-                        <TextBlock x:ConnectionId='5' HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center"                        Style="{ThemeResource CaptionTextBlockStyle}" />
-                        <TextBlock x:ConnectionId='6' HorizontalAlignment="Center" Grid.Column="2" VerticalAlignment="Center"                            />
-                        <Button x:ConnectionId='7' Margin="15,0,0,0" Content="Play"  Grid.Column="3"                           HorizontalAlignment="Right"/>
+                        <TextBlock x:ConnectionId='5' HorizontalAlignment="Left" Grid.Column="0" VerticalAlignment="Center"                       Style="{ThemeResource CaptionTextBlockStyle}" />
+                         <TextBlock x:ConnectionId='6' HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center"                        Style="{ThemeResource CaptionTextBlockStyle}" />
+                        <TextBlock x:ConnectionId='7' HorizontalAlignment="Center" Grid.Column="2" VerticalAlignment="Center"                            />
+                        <Button x:ConnectionId='8' Margin="15,0,0,0" Content="Play"  Grid.Column="3"                           HorizontalAlignment="Right"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

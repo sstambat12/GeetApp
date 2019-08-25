@@ -24,6 +24,7 @@
 				</Grid.ColumnDefinitions>
 				<muxc:NavigationView IsBackEnabled="{Binding ElementName=CentreFrame, Path=CanGoBack}" Grid.Column="0" x:Name="NavigationControlView" PaneDisplayMode="Left" BackRequested="NavigationControlView_BackRequested">
 			<muxc:NavigationView.MenuItems>
+                
 				<muxc:NavigationViewItem Content="My Music" Name="MyMusicMenu" Tapped="MyMusicMenu_Tapped"/>
 				<muxc:NavigationViewItem Content="Now Playing" Name="PlayListMenu"/>
                 <muxc:NavigationViewItem Content="Playlists" Name="PlaylistDisplay"/>
@@ -31,7 +32,7 @@
 
 
             </muxc:NavigationView.MenuItems>
-		    </muxc:NavigationView>
+ 		    </muxc:NavigationView>
 				<Frame Grid.Column="1" Name="CentreFrame">
 				
 			

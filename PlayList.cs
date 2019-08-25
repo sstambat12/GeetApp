@@ -12,14 +12,20 @@ namespace GeetApp
         public List<Song> songs;
         public string Name { get; set; }
 
+        public static List<string> UserPlayLists { get; set; }
+
+        public static EventHandler PlaylistDeleted { get; set; }
+        public static EventHandler PlaylistAdded { get; set; }
 
         public async void WriteToFileAsync()
         {
+            string content = "";
             foreach (var s in songs)
             {
-                var content = s.Title + "," + s.Artist + "," + s.AlbumName + "," + s.Duration+ ","+ s.Path;
-                await FileHelper.WriteTextFileAsync(Name, content);
+                content = content + "\n" + s.Title + "," + s.Artist + "," + s.AlbumName + "," + s.Duration+ ","+ s.Path ;
+                
             }
+            await FileHelper.WriteTextFileAsync(Name, content);
         }
 
         public async static Task<PlayList> GetPlayListFromFileAsync(string fileName)

@@ -10,13 +10,11 @@ namespace GeetApp
 {
     class FileHelper
     {
-        public async static         Task
-WriteTextFileAsync(string fileName, string content)
+        public async static Task WriteTextFileAsync(string fileName, string content)
         {
             var storageFolder = ApplicationData.Current.LocalFolder;
-            var textFile = await storageFolder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists);
+            var textFile = await storageFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
             var textStream = await textFile.OpenAsync(FileAccessMode.ReadWrite);
-            textStream.Seek(textStream.Size);
             var textWriter = new DataWriter(textStream);
             textWriter.WriteString("\n" + content);
             await textWriter.StoreAsync();
@@ -41,6 +39,13 @@ WriteTextFileAsync(string fileName, string content)
             var textLength = textStream.Size;
             await textReader.LoadAsync((uint)textLength);
             return textReader.ReadString((uint)textLength);
+        }
+
+        public async static void DeleteFile(string fileName)
+        {
+            var storageFolder = ApplicationData.Current.LocalFolder;
+            var textFile = await storageFolder.GetFileAsync(fileName);
+            await textFile.DeleteAsync();
         }
     }
 }

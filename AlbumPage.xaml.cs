@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Playback;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -35,11 +36,31 @@ namespace GeetApp
             listOfSongs.DataContext = album.Songs;
         }
 
-        private void PlayButton_Click(object sender, RoutedEventArgs e)
+        private async void PlayButton_Click(object sender, RoutedEventArgs e)
         {
+            DependencyObject iterator = sender as DependencyObject;
 
+            while (!(iterator is ListViewItem))
+            {
+                iterator = VisualTreeHelper.GetParent(iterator);
+
+            }
+            DependencyObject parent = VisualTreeHelper.GetParent(iterator);
+            Panel panel = parent as Panel;
+            int index = panel.Children.IndexOf(iterator as UIElement);
+            List<Song> list = listOfSongs.DataContext as List<Song>;
+            List<Song> songToPlay = new List<Song>();
+            songToPlay.Add(list[index]);
+            MediaPlaybackList playbackList = await MediaHelper.GetPlaybackList(songToPlay);
+            MediaHelper.MediaPlayer.Source = playbackList;
         }
 
-        
+        private async void PlayAll_Click(object sender, RoutedEventArgs e)
+        {
+            List<Song> list = listOfSongs.DataContext as List<Song>;
+            MediaPlaybackList playbacklist = await MediaHelper.GetPlaybackList(list);
+            playbacklist.ShuffleEnabled = true;
+            MediaHelper.MediaPlayer.Source = playbacklist;
+        }
     }
 }
